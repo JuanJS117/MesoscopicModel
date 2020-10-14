@@ -17,12 +17,14 @@ The model requires some Julia built-in packages to be preinstalled before runnin
     
 The required packages are "Distributions", "Random", and "DelimitedFiles". Once you have installed all of them, you can go back to terminal prompt by typing `close()` in your Julia Command-Line.
 
+Finally, you have to download the five main modules that contain core model codes. Those are "main.jl", "constants.jl", "grid.jl", "tools.jl" and "monitor.jl". Place them in a custom folder, where you will run tumor simulations.
+
 
 3. ##  Usage
 
-Now you are ready to play with the model. To run a single simulation, you need to download the five modules that contain all model's codes: "main.jl", "constants.jl", "grid.jl", "tools.jl" and "monitor.jl". Place them into a custom folder, open the terminal, and navigate to that folder by typing in your command-line:
+Now you are ready to play with the model. To run a single simulation, open the terminal and navigate to the folder where you placed core modules by typing in your command-line:
 
-    cd path
+    cd folder_path
     
 Once you are placed in the folder where all your modules are, please type the following in your terminal prompt:
 
@@ -30,8 +32,28 @@ Once you are placed in the folder where all your modules are, please type the fo
     
 With '#' being any number you want. In this way, your simulation files will be stored in a folder named 'Sim#'. Note that, if you run a second simulation using the same '#', files from the previous one will be overwritten.
 
+During simulation, successive messages will be prompted in the terminal, looking like this one below:
+
+    Cell no: 1.36007572e8; Volume: 3429.0; Activity: 2.45638e6; Necrotics: 2.87404226e8; Het: 0.7414231619172974
+    Iteration: 820; Time elapsed: 36.30663514137268
+    ------------------------------------------------------------------
+  
+Like this, you can keep track of tumor status during simulation. 
+
+Running a single simulation is great, but if you need to perform several of them, you will find it tedious to do it one by one, having to wait for a simulation to finish in order to throw the next one. In macOS and Linux, you can type this command in the terminal to throw *N* simulations, each of them starting right after the previous one is finished:
+
+    for i in {1..N} ; do echo Sim${i} ; julia main.jl $i ; done
+    
+In Windows, the sintaxis is slightly different.
+
+    FOR /L %I IN (1,1,N) DO julia main.jl %I
+    
+Once all simulations have finished, you will have *N* new folders with simulation files. Although this is much less tedious, still you have to wait for each simulation to finish until the next one starts. You can always open several terminals at once, and split the *N* simulations you need to run into all opened terminals. 
+
 
 4. ##  Simulation files
+
+Once you have run your first simulation, navigate to the folder 
 
 
 5. ##  Credits
