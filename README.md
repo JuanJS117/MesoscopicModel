@@ -61,7 +61,7 @@ In Windows, the sintaxis is slightly different.
 
     FOR /L %I IN (1,1,N) DO julia main.jl %I
     
-Once all simulations have finished, you will have *N* new folders with simulation files. Although this is much less tedious, still you have to wait for each simulation to finish until the next one starts. You can always open several terminals at once, and split the *N* simulations you need to run into all opened terminals. 
+Once all simulations have finished, you will have *N* new folders with simulation files. Although this is much less tedious, you still have to wait for each simulation to finish until the next one starts. You can always open several terminals at once, and split the *N* simulations you need to run into all opened terminals. 
 
 
 ### 4. Simulation files
