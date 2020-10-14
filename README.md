@@ -104,7 +104,7 @@ Although basic in its design, the model is complex enough to allow for the emerg
 
 If you use the mesoscopic model, please cite the following work:
 
-### **A mesoscopic simulator to uncover heterogeneity and evolutionary dynamics in tumors**
+### [**A mesoscopic simulator to uncover heterogeneity and evolutionary dynamics in tumors**](https://www.biorxiv.org/content/10.1101/2020.08.18.255422v1)
 Juan Jiménez-Sánchez, Álvaro Martínez-Rubio, Anton Popov, Julián Pérez-Beteta, Youness Azimzade, David Molina-García, Juan Belmonte-Beitia, Gabriel F. Calvo, Víctor M. Pérez-García <br/>
 **bioRxiv 2020.08.18.255422** <br/>
 doi: https://doi.org/10.1101/2020.08.18.255422 <br/>
