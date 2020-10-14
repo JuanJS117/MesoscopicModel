@@ -2,11 +2,11 @@
 
 ## A discrete, stochastic, on-lattice, multicompartmental, mesoscale and 3D computational simulation tool to study evolutionary dynamics and heterogeneity during tumor growth
 
-## 1. Description
+### 1. Description
 
 Here we present
 
-## 2. Installation and required packages
+### 2. Installation and required packages
 
 To run a tumor simulation, you need to install Julia in your computer. You can download Julia from [here](https://julialang.org/downloads/). Search for the proper version depending on your platform (Windows, macOS or Linux), and follow the [platform specific instructions](https://julialang.org/downloads/platform/). As a recomendation, the model is built upon Julia version 1.1.1, so we encourage users to try and install this same version in order to use the model. Although we expect so, we do not know if newer/older versions will support the code presented here.
 
@@ -20,7 +20,7 @@ The required packages are "Distributions", "Random", and "DelimitedFiles". Once 
 Finally, you have to download the five main modules that contain core model codes. Those are "main.jl", "constants.jl", "grid.jl", "tools.jl" and "monitor.jl". Place them in a custom folder, where you will run tumor simulations.
 
 
-## 3. Usage
+### 3. Usage
 
 Now you are ready to play with the model. To run a single simulation, open the terminal and navigate to the folder where you placed core modules by typing in your command-line:
 
@@ -51,7 +51,7 @@ In Windows, the sintaxis is slightly different.
 Once all simulations have finished, you will have *N* new folders with simulation files. Although this is much less tedious, still you have to wait for each simulation to finish until the next one starts. You can always open several terminals at once, and split the *N* simulations you need to run into all opened terminals. 
 
 
-## 4. Simulation files
+### 4. Simulation files
 
 Once you have run your first simulation, navigate to the newly created 'Sim#' folder. Here you will find a bunch of files, most of them being named like this: *Gen_space_####.txt*. Those files contain a system snapshot at iteration #### (snapshots are usually taken each 20 iterations). If you open any of them, you will see a structure containing several rows similar to the one below:
 
@@ -63,9 +63,11 @@ Files come without a header, so you won't know what does each column mean unless
     
 Meaning that each row contains all cell numbers within a voxel. The first three columns indicate the spatial coordinates of the voxel, and the following eight columns contain the cell numbers of each clonal population. Notice that in the example there are 8 clonal populations, due to a simulation being done considering 3 possible alterations. If you work with a different number of alterations *G*, expect a number of columns equal to 5+2<sup>G</sup>. The last two columns represent the number of necrotic and newborn cells within the voxel, respectively. Note that, while necrotics accumulate throught time (their number increase as a monotonic function), newborn cells are snapshots of the system at a given iteration.
 
+By knowing how this file is structured, it is easy to decode it and analyze any parameter of interest. In this repository a Matlab code is uploaded, that contains a simple function to retrieve these parameters and plot them, by reading the files generated during simulation.
 
 
-## 5. Credits
+
+### 5. Credits
 
 If you use the mesoscopic model, please cite the following work:
 
