@@ -4,7 +4,7 @@
 
 ### 1. Description
 
-Here we present
+**PONER BREVE DESCRIPCIÓN DEL MODELO AQUÍ**
 
 ### 2. Julia installation and required packages
 
@@ -68,9 +68,16 @@ By knowing how this file is structured, it is easy to decode it and analyze any 
 
 ### 5. Editing the code
 
-Current version of the model works with in-code parameters, so if you want to modify any of them, you must edit 'constants.jl' module. Any text editor will suit for this purpose; however, here we recommend using Atom. You can download Atom from [here](https://atom.io). 
+Current version of the model works with in-code parameters, so if you want to modify any of them, you must edit 'constants.jl' module. Any text editor will suit for this purpose; however, here we recommend using Atom. You can download Atom from [here](https://atom.io). As a hackable editor, you can install several packages that will let you work with Julia codes, and even test and debug them directly on Atom. The basic packages required to comfortably work with Julia in Atom are:
 
-However, feel free to read and edit the code in whatever way you feel more comfortable with. Jupyter Notebook is another recommended way of playing with the code.
+* **language-julia.** This package provides support for Julia codes, including syntax highlighting and snippets for common Julia keywords.
+* **julia-client.** Boots Julia from inside Atom, providing autocompletion and evaluation within the editor.
+* **ink.** Provides generic UI components for building IDEs in Atom.
+* **uber-juno.** Sets up Juno IDE, a Julia environment to run Julia code interactively within Atom.
+
+Install these packages in Atom looking for them in `Preferences -> Packages`, and be sure to keep them updated. You may probably need to restart Atom after installing them.
+
+Atom is just an option, and the one we chose to work with the model. However, feel free to read and edit the code in whatever way you feel more comfortable with. Jupyter Notebook is another recommended editor. [Here](https://datatofish.com/add-julia-to-jupyter/) you can find a tutorial to setup Julia in Jupyter Notebook, and run Julia code within it.
 
 
 ### 6. Future work
@@ -95,9 +102,10 @@ If you use the mesoscopic model, please cite the following work:
 Juan Jiménez-Sánchez, Álvaro Martínez-Rubio, Anton Popov, Julián Pérez-Beteta, Youness Azimzade, David Molina-García, Juan Belmonte-Beitia, Gabriel F. Calvo, Víctor M. Pérez-García <br/>
 **bioRxiv 2020.08.18.255422** <br/>
 doi: https://doi.org/10.1101/2020.08.18.255422 <br/>
-*This article is a preprint and has not been certified by peer review yet. It is currently under revision*   
+*This article is a preprint and has not been certified by peer review yet. It is currently under revision.*   
 
 For any inquiries regarding code usage, or any question related to troubleshooting, please address it to any of the following contributors:
 * Juan Jiménez-Sánchez: Juan.JSanchez@uclm.es
 * Álvaro Martínez-Rubio: alvaro.martinezrubio@uca.es
+* Gabriel Fernández Calvo: Gabriel.Fernandez@uclm.es 
 * Víctor M. Pérez-García: Victor.PerezGarcia@uclm.es
