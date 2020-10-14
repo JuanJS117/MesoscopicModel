@@ -53,7 +53,7 @@ During simulation, successive messages will be prompted in the terminal, looking
   
 In this way, you can keep track of tumor status during simulation. 
 
-Running a single simulation is great, but if you need to perform several of them, you will find it tedious to do it one by one, having to wait for a simulation to finish in order to throw the next one. In macOS and Linux, you can type this command in the terminal to throw *N* simulations, each of them starting right after the previous one is finished:
+Running a single simulation is great, but if you need to perform several of them, you will find it tiresome to do it one by one, having to wait for a simulation to finish in order to throw the next one. In macOS and Linux, you can type this command in the terminal to throw *N* simulations, each of them starting right after the previous one is finished:
 
     for i in {1..N} ; do echo Sim${i} ; julia main.jl $i ; done
     
