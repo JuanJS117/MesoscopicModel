@@ -4,13 +4,21 @@
 
 ### 1. Description
 
-**PONER BREVE DESCRIPCIÓN DEL MODELO AQUÍ**
+Here we put forward the mesoscopic model, a simulation platform intended to reproduce tumor growth and progression *in silico*, in a way that evolutionary dynamics and intratumor heterogeneity can be studied and related to other macroscopic tumor features. The model works at the mesoscopic scale, integrating both information at the cellular level, and sizeable clinically-relevant tumors. In doing so, whole simulated tumors with nearly 6 cm of diameter and up to 10<sup>10</sup> cells can be simulated at considerably fast times (2~5 min). The model let us implement mutational and CNV information that affects the way cells behave and interact with each other, while keeping the same resolution as clinical images, so that real PET and/or MRI images can be compared with model results. An example of this is shown in image below: in **A)**, we can see a MRI image of a real glioblastoma, while in **B)**, several *in silico* tumor sections are depicted. It is noticeable that the lobules appearing in the real glioblastoma are reproduced by the model, emerging in simulated tumors.
+
+![Fig 2](https://github.com/JuanJS117/MesoscopicModel/blob/main/fig4.png)
+
+The model is based in an *on lattice* 3D spatial domain, where each compartment can contain several cells. Compartments are called voxels, as they keep the same resolution as this basic clinical imaging unit (around 1 mm<sup>3</sup>). Cells perform basic processes: division, death, migration and mutation, and they can belong to different clonal populations, depending on the genes/pathways they have altered. These alterations affect the rates at which cells perform basic processes, in such a way that cells from an altered clonal population may gain a selective advantage. As evaluating cell by cell would be really time-consuming, whole clonal populations are evaluated at once, considering that cells belonging to the same population behave mostly in the same way (except for some intrinsic noise due to stochastic cell processes). Down below
 
 ![Fig 1](https://github.com/JuanJS117/MesoscopicModel/blob/main/fig1.png)
 
-![Fig 4](https://github.com/JuanJS117/MesoscopicModel/blob/main/fig4.png)
 
-![Fig 5](https://github.com/JuanJS117/MesoscopicModel/blob/main/fig5.png)
+
+
+![Fig 3](https://github.com/JuanJS117/MesoscopicModel/blob/main/fig5.png)
+
+
+
 
 ### 2. Julia installation and required packages
 
