@@ -8,16 +8,15 @@ Here we put forward the mesoscopic model, a simulation platform intended to repr
 
 ![Fig 2](https://github.com/JuanJS117/MesoscopicModel/blob/main/fig4.png)
 
-The model is based in an *on lattice* 3D spatial domain, where each compartment can contain several cells. Compartments are called voxels, as they keep the same resolution as this basic clinical imaging unit (around 1 mm<sup>3</sup>). Cells perform basic processes: division, death, migration and mutation, and they can belong to different clonal populations, depending on the genes/pathways they have altered. These alterations affect the rates at which cells perform basic processes, in such a way that cells from an altered clonal population may gain a selective advantage. As evaluating cell by cell would be really time-consuming, whole clonal populations are evaluated at once, considering that cells belonging to the same population behave mostly in the same way (except for some intrinsic noise due to stochastic cell processes). Down below
+The model is based in an *on lattice* 3D spatial domain, where each compartment can contain several cells. Compartments are called voxels, as they keep the same resolution as this basic clinical imaging unit (around 1 mm<sup>3</sup>). Cells perform basic processes: division, death, migration and mutation, and they can belong to different clonal populations, depending on the genes/pathways they have altered. These alterations affect the rates at which cells perform basic processes, in such a way that cells from an altered clonal population may gain a selective advantage. As evaluating cell by cell would be really time-consuming, whole clonal populations are evaluated at once, considering that cells belonging to the same population behave mostly in the same way (except for some intrinsic noise due to stochastic cell processes). Down below it is depicted the basic model algorithm: at each iteration, every clonal population in every voxel is evaluated, and its cell number is updated with cell gains and losses coming from basic processes (**A)**). A toy depiction of an *in silico* tumor is shown in **B)**, where cells start in a single voxel, and they spread through division and mutation, with the tumor increasing its heterogeneity as they also mutate. In **C)** we can see a truly section of a simulation in false color, pointing that a single voxel can contain up to thousands of cells.
 
 ![Fig 1](https://github.com/JuanJS117/MesoscopicModel/blob/main/fig1.png)
 
-
-
+Thanks to this setup, we can keep track of all clonal populations, to see how cells from them all compete among them to access resources and invade new areas. By looking at these evolutionary dynamics, we can measure tumor heterogeneity, and link it to macroscopic features such as the lobules previously mentioned. Some of these macroscopic features, such as rim width or surface regularity, carry prognostic value in real life, so studying them in the model may let us gain deeper insight into the processes that let them emerge. In the image below we can see tridimensional renderings of clonal populations' spatial distribution (**A)**). In **B)** a similar section to image 1 is depicted of the same simulation as in **A)**, and in **C)**, we can see the tridimensional rendering of all clonal populations packed together. Finally, in **D)** we show the phylogenetic tree of this simulation, depicting which alterations appeared in the tumor and at which time point.
 
 ![Fig 3](https://github.com/JuanJS117/MesoscopicModel/blob/main/fig5.png)
 
-
+Further model details and results can be seen by reading the preprint mentioned in **Credits** section.
 
 
 ### 2. Julia installation and required packages
