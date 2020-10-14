@@ -66,8 +66,28 @@ Meaning that each row contains all cell numbers within a voxel. The first three 
 By knowing how this file is structured, it is easy to decode it and analyze any parameter of interest. In this repository a Matlab code is uploaded, that contains a simple function to retrieve these parameters and plot them, by reading the files generated during simulation.
 
 
+### 5. Editing the code
 
-### 5. Credits
+Current version of the model works with in-code parameters, so if you want to modify any of them, you must edit 'constants.jl' module. Any text editor will suit for this purpose; however, here we recommend using Atom. You can download Atom from [here](https://atom.io). 
+
+However, feel free to read and edit the code in whatever way you feel more comfortable with. Jupyter Notebook is another recommended way of playing with the code.
+
+
+### 6. Future work
+
+Currently we are focused on properly parameterizing the model with genetic/clinical data and bayesian algorithms, in order to reproduce realistic glioblastomas. As the model is general enough, in theory it allows for reproducing any type of tumor; however, that would require a much more basic previous parameterization, to define a proper number of alterations to be considered, and a set of characteristic times for basic cell processes. A future line of work is to define sets of parameters that are associated with certain kinds of tumors, so that any of them can be simulated in no time, without requiring any previous parameter search.
+
+Although basic in its design, the model is complex enough to allow for the emergence of tumor properties that behave in a similar way than they do *in vivo*. However, the model still lacks some key components that must be added in posterior versions. Some of them are listed down below:
+
+* **Therapy.** Without this element, the model can only produce untreated tumors, which is something far away from reality. Introducing both chemo and radiotherapy (and even immunotherapy) would in turn allow to reproduce the evolution of tumors in patients already treated, and search for the optimal therapy schemes, that lead to the best survival times. This is an interesting study to do and undoubtedly a future milestone in this work. Resistance comes in the same pack as treatment, so including it in the model will also allow for studying the emergence of resistant cells.
+
+* **Microenvironment.** It is already known that tumor microenvironment plays a major role in tumor development, as cells do interact with stromal cells and are affected by surrounding conditions. In this model version, microenvironment is modelled in a implicit way, via probabilities associated to each cell process. In a future work, we intend to include a detailed version of extracellular matrix, cancer-associated fibroblasts (CAFs), and even immune cells such as neutrophils and T cells, that would ease immunotherapy inclusion in the model.
+
+* **Vasculature.** The model does not consider a proper vascular system, so hypoxia and lack of nutrients are restricting conditions that can only be implicitly modelled in the system by now. However, developing a mesoscopic version of the vasculature would let us include both of these conditions in a much more precise way, and even allowing us for the inclusion of anti-angiogenic therapies, such as bevacizumab.
+
+
+
+### 7. Credits
 
 If you use the mesoscopic model, please cite the following work:
 
