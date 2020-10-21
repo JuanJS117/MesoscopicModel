@@ -93,7 +93,13 @@ Install these packages in Atom looking for them in `Preferences -> Packages`, an
 Atom is just an option, and the one we chose to work with the model. However, feel free to read and edit the code in whatever way you feel more comfortable with. Jupyter Notebook is another recommended editor. [Here](https://datatofish.com/add-julia-to-jupyter/) you can find a tutorial to setup Julia in Jupyter Notebook, and run Julia code within it.
 
 
-### 6. Future work
+### 6. Reproducibility
+
+
+### 7. Tumor graphics
+
+
+### 8. Future work
 
 Currently we are focused on properly parameterizing the model with genetic/clinical data and bayesian algorithms, in order to reproduce realistic glioblastomas. As the model is general enough, in theory it allows for reproducing any type of tumor; however, that would require a much more basic previous parameterization, to define a proper number of alterations to be considered, and a set of characteristic times for basic cell processes. A future line of work is to define sets of parameters that are associated with certain kinds of tumors, so that any of them can be simulated in no time, without requiring any previous parameter search.
 
@@ -107,7 +113,7 @@ Although basic in its design, the model is complex enough to allow for the emerg
 
 
 
-### 7. Credits
+### 9. Credits
 
 If you use the mesoscopic model, please cite the following work:
 
