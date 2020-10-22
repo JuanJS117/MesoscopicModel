@@ -30,7 +30,7 @@ Additionally, the model requires some Julia built-in packages to be preinstalled
     
 The required packages are "Distributions", "Random", and "DelimitedFiles". Once you have installed all of them, you can go back to terminal prompt by typing `close()` in your Julia Command-Line.
 
-Finally, you have to download the five main modules that contain core model codes. Those are "main.jl", "constants.jl", "grid.jl", "tools.jl" and "monitor.jl". Place them in a custom folder, where you will run tumor simulations.
+Finally, you have to download the five main modules that contain core model codes. Those are "main.jl", "constants.jl", "grid.jl", "tools.jl" and "monitor.jl". You also need to download the input file "Param_dist.txt", that contains distributions of cell processes' characteristic times to sample from. Place them in a custom folder, where you will run tumor simulations.
 
 
 ### 3. Usage
@@ -94,6 +94,8 @@ Atom is just an option, and the one we chose to work with the model. However, fe
 
 
 ### 6. Reproducibility
+
+In order to run simulations, the model 
 
 
 ### 7. Tumor graphics
