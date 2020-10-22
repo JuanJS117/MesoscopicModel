@@ -100,6 +100,8 @@ In order to run simulations, the model requires the 'Param_dist.txt' file, from 
 
 ### 7. Tumor graphics
 
+As you may already noticed, the core modules written in Julia do not provide any graphical representation of *in silico* tumors. However, simulation files contain all ingredients required to produce any desired tumor representations. In this repository we attach some Matlab functions that allows the user to decode simulation files and produce many different plots, which are helpful at providing a clearer understanding of what is going on inside tumor guts.
+
 
 ### 8. Future work
 
