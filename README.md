@@ -95,7 +95,7 @@ Atom is just an option, and the one we chose to work with the model. However, fe
 
 ### 6. Reproducibility
 
-In order to run simulations, the model 
+In order to run simulations, the model requires the 'Param_dist.txt' file, from which it samples random characteristic times of cell processes as input parameters. The file posted in this repository is the same that has been used [here](https://www.biorxiv.org/content/10.1101/2020.08.18.255422v1) to run simulations, as it is adapted to the case of glioblastoma. However, you can change it freely to run simulations under different conditions. 
 
 
 ### 7. Tumor graphics
