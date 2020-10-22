@@ -16,7 +16,7 @@ Thanks to this setup, we can keep track of all clonal populations, to see how ce
 
 ![Fig 3](https://github.com/JuanJS117/MesoscopicModel/blob/main/fig5.png)
 
-Further model details and results can be seen by reading the preprint mentioned in **Credits** section.
+Further model details and results can be seen by reading the works the mesoscopic model has appeared in so far. All of them are mentioned in the **Publications** section. If you use the model or cite it in any papers of yours, we kindly ask you to reference our work. More details regarding this are provided in the **Credits** section.
 
 
 ### 2. Julia installation and required packages
@@ -112,8 +112,18 @@ Although basic in its design, the model is complex enough to allow for the emerg
 * **Vasculature.** The model does not consider a proper vascular system, so hypoxia and lack of nutrients are restricting conditions that can only be implicitly modelled in the system by now. However, developing a mesoscopic version of the vasculature would let us include both of these conditions in a much more precise way, and even allowing us for the inclusion of anti-angiogenic therapies, such as bevacizumab.
 
 
+### 9. Publications
 
-### 9. Credits
+The model has appeared in 1 publication and 2 preprints so far. Both preprints are currently under evaluation for publication. In this section we list the model's contribution to these published works:
+
+* **A mesoscopic simulator to uncover heterogeneity and evolutionary dynamics in tumors.** Juan Jiménez-Sánchez, Álvaro Martínez-Rubio, Anton Popov, Julián Pérez-Beteta, Youness Azimzade, David Molina-García, Juan Belmonte-Beitia, Gabriel F. Calvo, Víctor M. Pérez-García.
+**bioRxiv 2020.08.18.255422.** *Submitted to PLOS Computational Biology.* doi: https://doi.org/10.1101/2020.08.18.255422 <br/>
+
+* **Universal scaling laws rule explosive growth in human cancers.** Víctor M. Pérez-García, Gabriel F. Calvo, Jesús J. Bosque, Odelaisy León-Triana, Juan Jiménez-Sánchez, Julián Pérez-Beteta, Juan Belmonte-Beitia, Manuel Valiente, Lucía Zhu, Pedro García-Gómez, Pilar Sánchez-Gómez, Esther Hernández-San Miguel, Rafael Hortigüela, Youness Azimzade, David Molina-García, Álvaro Martínez-Rubio, Ángel Acosta Rojas, Ana Ortiz de Mendivil, Francois Vallette, Philippe Schucht, Michael Murek, María Pérez-Cano, David Albillo, Antonio F. Honguero Martínez, Germán A. Jiménez Londoño, Estanislao Arana, Ana M. García Vicente. **Nature Physics 2020.** doi: https://doi.org/10.1038/s41567-020-0978-6 <br/>
+
+* **Evolutionary dynamics at the tumor edge reveals metabolic imaging biomarkers.** Juan Jiménez-Sánchez, Jesús J. Bosque, Germán A. Jiménez-Londoño, David Molina-García, Álvaro Martínez-Rubio, Julián Pérez-Beteta, Carmen Ortega-Sabater, Antonio F. Honguero-Martínez, Ana M. García-Vicente, Gabriel F. Calvo, Víctor M. Pérez-García. **medRxiv 2020.10.06.20204461.** *Submitted to PNAS.* doi: https://doi.org/10.1101/2020.10.06.20204461 <br/>
+
+### 10. Credits
 
 If you use the mesoscopic model, please cite the following work:
 
