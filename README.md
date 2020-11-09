@@ -23,7 +23,7 @@ Further model details and results can be seen by reading the works the mesoscopi
 
 To run a tumor simulation, you need to install Julia in your computer. You can download Julia from [here](https://julialang.org/downloads/). Search for the proper version depending on your platform (Windows, macOS or Linux), and follow the [platform specific instructions](https://julialang.org/downloads/platform/). As a recomendation, the model is built upon Julia version 1.1.1, so we encourage users to try and install this same version in order to use the model. Although we expect so, we do not know if newer/older versions will support the code presented here.
 
-Additionally, the model requires some Julia built-in packages to be preinstalled before running simulations. Once you have installed Julia in your computer, you can download and install any Julia package by opening the Julia Command-Line (type `julia` in your terminal) and entering the specific package environment `Pkg` prompt (type `]` in Julia Command-Line). Once you have accessed Pkg prompt, type:
+Additionally, the model requires some Julia built-in packages to be preinstalled before running simulations. Once you have installed Julia in your computer, you can download and install any Julia package by opening the Julia Command-Line (type `julia` in your terminal) and entering the specific package environment Pkg prompt (type `]` in Julia Command-Line). Once you have accessed Pkg prompt, type:
 
     add PackageName
     
