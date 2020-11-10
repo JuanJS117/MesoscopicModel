@@ -116,7 +116,7 @@ During simulation, successive messages will be prompted in the terminal, looking
     Iteration: 820; Time elapsed: 36.30663514137268
     ------------------------------------------------------------------
   
-In this way, you can keep track of tumor status during simulation. 
+In this way, you can keep track of tumor status during simulation. Info about total cell number, tumor volume, newborn cells (activity), necrotic cells, and Shannon entropy (heterogeneity) will be displayed each 20 iterations. Additionally, current iteration and elapsed time since the start will also be shown.
 
 Running a single simulation is great, but if you need to perform several of them, you will find it tiresome to do it one by one, having to wait for a simulation to finish in order to throw the next one. In macOS and Linux, you can type this command in the terminal to throw *N* simulations, each of them starting right after the previous one is finished:
 
@@ -146,12 +146,12 @@ By knowing how this file is structured, it is easy to decode it and analyze any 
 
 ## 5. Editing the code
 
-Current version of the model works with in-code parameters, so if you want to modify any of them, you must edit 'constants.jl' module. Any text editor will suit for this purpose; however, here we recommend using Atom. You can download Atom from [here](https://atom.io). As a hackable editor, you can install several packages that will let you work with Julia codes, and even test and debug them directly on Atom. The basic packages required to comfortably work with Julia in Atom are:
+Current version of the model works with in-code parameters, so if you want to modify any of them, you must edit 'constants.jl' module. Any text editor will suit for this purpose; however, here we recommend using Atom. You can download Atom from [here](https://atom.io). As a hackable editor, you can install several packages that will let you work with Julia codes, and even test and debug them directly on Atom. The most important is arguably [Juno](https://junolab.org), a Julia environment embedded in Atom. The basic packages required to comfortably work with Julia in Atom are:
 
-* **language-julia.** This package provides support for Julia codes, including syntax highlighting and snippets for common Julia keywords.
-* **julia-client.** Boots Julia from inside Atom, providing autocompletion and evaluation within the editor.
-* **ink.** Provides generic UI components for building IDEs in Atom.
-* **uber-juno.** Sets up Juno IDE, a Julia environment to run Julia code interactively within Atom.
+* **[uber-juno](https://atom.io/packages/uber-juno).** Sets up Juno IDE, a Julia environment to run Julia code interactively within Atom.
+* **[language-julia](https://atom.io/packages/language-julia).** This package provides support for Julia codes, including syntax highlighting and snippets for common Julia keywords.
+* **[julia-client](https://atom.io/packages/julia-client).** Boots Julia from inside Atom, providing autocompletion and evaluation within the editor.
+* **[ink](https://atom.io/packages/ink).** Provides generic UI components for building IDEs in Atom.
 
 Install these packages in Atom looking for them in `Preferences -> Packages`, and be sure to keep them updated. You may probably need to restart Atom after installing them.
 
