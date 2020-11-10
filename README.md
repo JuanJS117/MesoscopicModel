@@ -46,9 +46,9 @@ You have just created a symlink to your Julia version. Once done, you can open a
 * ### Windows
 
 In Windows, you will need to add Julia executable directory to PATH. Otherwise, you will need to type the whole path each time you want to run Julia (C:\Users\myusername\AppData\Local\Julia-<version> by default). Steps for Windows 10 are listed below:
-     * Open cmd (press Windows Key + R), type `rundll132 sysdm.cpl,EditEnvironmentVariables`, and hit enter.
-     * Go to either "User Variables" or "System Variables" section, find the row with "Path", and click edit.ib     * A "Edit environment variable" User Interface will appear. Click "New" and paste the Julia installation directory `C:\Users\myusername\AppData\Local\Julia-<version>\`
-     * Open cmd (press Windows Key + R), type `rundll132 sysdm.cpl,EditEnvironmentVariables`, and hit enter.
+     1. Open cmd (press Windows Key + R), type `rundll132 sysdm.cpl,EditEnvironmentVariables`, and hit enter.
+     1. Go to either "User Variables" or "System Variables" section, find the row with "Path", and click edit.ib     * A "Edit environment variable" User Interface will appear. Click "New" and paste the Julia installation directory `C:\Users\myusername\AppData\Local\Julia-<version>\`
+     1. Open cmd (press Windows Key + R), type `rundll132 sysdm.cpl,EditEnvironmentVariables`, and hit enter.
 
 * ### Linux
 
