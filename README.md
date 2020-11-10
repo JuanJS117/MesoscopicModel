@@ -19,9 +19,27 @@ Thanks to this setup, we can keep track of all clonal populations, to see how ce
 Further model details and results can be seen by reading the works the mesoscopic model has appeared in so far. All of them are mentioned in the **Publications** section. If you use the model or cite it in any papers of yours, we kindly ask you to reference our work. More details regarding this are provided in the **Credits** section.
 
 
-### 2. Julia installation and required packages
+### 2. Installation and requirements
 
-To run a tumor simulation, you need to install Julia in your computer. You can download Julia from [here](https://julialang.org/downloads/). Search for the proper version depending on your platform (Windows, macOS or Linux), and follow the [platform specific instructions](https://julialang.org/downloads/platform/). As a recomendation, the model is built upon Julia version 1.1.1, so we encourage users to try and install this same version in order to use the model. Although we expect so, we do not know if newer/older versions will support the code presented here.
+Down below we detail every required step to run a simulation and visualize output files. We encourage users to follow carefully every instruction, as they have been thoroughly tested for proper code execution. Nevertheless, in case any problem arises during any step (due to installation in different OS), feel free to contact any of the people listed at the end of this page.
+
+## 2.1 Julia installation
+
+The model is written in Julia, so in order to run a tumor simulation, you need to install Julia in your computer. You can download Julia from [here](https://julialang.org/downloads/). Search for the proper version depending on your platform (Windows, macOS or Linux), and follow the [platform specific instructions](https://julialang.org/downloads/platform/). The model is built upong Julia version 1.1.1, though compatibility is guaranteed with version 1.5.2 so far. As a recommendation, we encourage users to download and install the latest stable release that supports the model. Further versions will be checked for compatibility as they are released.
+
+## 2.2 Add Julia to path
+
+After downloading and installing Julia, some additional steps are required to run it directly from the terminal (macOS), shell (Unix) or cmd (Windows). In macOS, Julia installation brings an app that, when oppened, triggers a specific Julia terminal that let you run commands directly from the prompt. We forget this for now, as we are not going to use it. Depending on your OS, required steps to enable calling Julia from the terminal/shell/cmd are:
+
+* # macOS
+
+To run Julia from the terminal, navigate to <usr/bin>
+
+    ln -s /Applications/Julia-1.5.app/Contents/Resources/julia/bin/julia /usr/local/bin/julia
+
+* # Windows
+
+* # Linux
 
 Additionally, the model requires some Julia built-in packages to be preinstalled before running simulations. Once you have installed Julia in your computer, you can download and install any Julia package by opening the Julia Command-Line (type `julia` in your terminal) and entering the specific package environment Pkg prompt (type `]` in Julia Command-Line). Once you have accessed Pkg prompt, type:
 
