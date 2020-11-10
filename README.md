@@ -68,23 +68,34 @@ Additionally, the model requires some Julia built-in packages to be preinstalled
 
 - Open Julia Command-Line (type `julia` in your terminal/shell/cmd) and enter the specific package environment Pkg prompt (type `]` in Julia Command-Line). Once you have accessed Pkg prompt, type:
 
-    add PackageName
+        add PackageName
     
 and let selected package to be installed. Once you are done, close Pkg environment pressing Ctrl+C, and exit Julia Command-Line by typing `close()`. You will return to your default terminal/shell/cmd prompt.
 
 - Open Julia Command-Line, and type
 
-    use Pkg
-    Pkg.add("Package Name")
+        use Pkg
+        Pkg.add("Package Name")
     
 Then exit Julia Command-Line to go back to default terminal/shell/cmd prompt.
     
 
 For some Julia versions, these methods may not work. If one of them does not work, try the other.
 
-The required packages for running the model are "Distributions", "Random", and "DelimitedFiles". 
+The required packages for running the model are:
 
-Finally, you have to download the five main modules that contain core model codes. Those are "main.jl", "constants.jl", "grid.jl", "tools.jl" and "monitor.jl". You also need to download the input file "Param_dist.txt", that contains distributions of cell processes' characteristic times to sample from. Place them in a custom folder, where you will run tumor simulations.
+- Distributions
+- Random
+- DelimitedFiles
+
+Finally, you have to download the five main modules that contain core model's codes. Those are:
+- main.jl
+- constants.jl
+- grid.jl
+- tools.jl
+- monitor.jl
+
+You also need to download the input file "Param_dist.txt", that contains distributions of cell processes' characteristic times to sample from. Place them in a custom folder, where you will run tumor simulations.
 
 
 ## 3. Usage
