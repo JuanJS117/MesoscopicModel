@@ -64,16 +64,25 @@ Like this, you should be able to run Julia directly from the shell by typing `ju
 
 ### 2.3 Required Julia packages
 
-Additionally, the model requires some Julia built-in packages to be preinstalled before running simulations. Once you have installed Julia in your computer, you can download and install any Julia package by opening the Julia Command-Line (type `julia` in your terminal) and entering the specific package environment Pkg prompt (type `]` in Julia Command-Line). Once you have accessed Pkg prompt, type:
+Additionally, the model requires some Julia built-in packages to be preinstalled before running simulations. Once you have installed Julia in your computer, there are two ways of installing Julia packages:
+
+- Open Julia Command-Line (type `julia` in your terminal/shell/cmd) and enter the specific package environment Pkg prompt (type `]` in Julia Command-Line). Once you have accessed Pkg prompt, type:
 
     add PackageName
     
-and let selected package to be installed. Alternatively, you can install Juno environment in Atom, to run Julia Command-Line directly from Atom console. In Juno, package installing is a little bit different. You need to type this:
+and let selected package to be installed. Once you are done, close Pkg environment pressing Ctrl+C, and exit Julia Command-Line by typing `close()`. You will return to your default terminal/shell/cmd prompt.
+
+- Open Julia Command-Line, and type
 
     use Pkg
     Pkg.add("Package Name")
     
-in order to install desired packages. The required packages for running the model are "Distributions", "Random", and "DelimitedFiles". Once you have installed all of them, you can go back to terminal prompt by typing `close()` in your Julia Command-Line.
+Then exit Julia Command-Line to go back to default terminal/shell/cmd prompt.
+    
+
+For some Julia versions, these methods may not work. If one of them does not work, try the other.
+
+The required packages for running the model are "Distributions", "Random", and "DelimitedFiles". 
 
 Finally, you have to download the five main modules that contain core model codes. Those are "main.jl", "constants.jl", "grid.jl", "tools.jl" and "monitor.jl". You also need to download the input file "Param_dist.txt", that contains distributions of cell processes' characteristic times to sample from. Place them in a custom folder, where you will run tumor simulations.
 
