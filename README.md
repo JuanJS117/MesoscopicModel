@@ -89,13 +89,13 @@ The required packages for running the model are:
 
 Finally, you have to download the [five main modules](https://github.com/JuanJS117/MesoscopicModel/tree/main/Core%20modules) that contain core model's codes. Those are:
 
-- **main.jl**
-- **constants.jl**
-- **grid.jl**
-- **tools.jl**
-- **monitor.jl**
+- **[main.jl](https://github.com/JuanJS117/MesoscopicModel/blob/main/Core%20modules/main.jl)** Principal module. It loads all the other modules and performs a single tumor simulation. If you want to run a simulation, you must call this module from the terminal by typing `julia main.jl #`, with # being a custom number, used to identify your simulation.
+- **[constants.jl](https://github.com/JuanJS117/MesoscopicModel/blob/main/Core%20modules/constants.jl)** This module initializes all model parameters and constants. If you want to change any parameter, you must edit this module with your text editor of choice.
+- **[grid.jl](https://github.com/JuanJS117/MesoscopicModel/blob/main/Core%20modules/grid.jl)** This module creates all grid structures that store info about the tumor (namely cell number, clonal populations, etc). Here are also included instructions to perform a single iteration, and functions that perform all basic cell processes.
+- **[monitor.jl](https://github.com/JuanJS117/MesoscopicModel/blob/main/Core%20modules/monitor.jl)** This module contains all functions that allow monitoring tumor macroscopic variables during time, such as volume and heterogeneity. 
+- **[tools.jl](https://github.com/JuanJS117/MesoscopicModel/blob/main/Core%20modules/tools.jl)** This module includes simple subroutines to perform task such as saving tumor status files, and displaying tumor status in the terminal.
 
-You also need to download the input file "Param_dist.txt", that contains distributions of cell processes' characteristic times to sample from. Place them in a custom folder, where you will run tumor simulations.
+You also need to download the input file "**Param_dist.txt**", that contains distributions of cell processes' characteristic times to sample from. Place them in a custom folder, where you will run tumor simulations.
 
 
 ## 3. Usage
