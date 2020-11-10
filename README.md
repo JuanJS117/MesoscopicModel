@@ -52,9 +52,17 @@ In Windows, you will need to add Julia executable directory to PATH. Otherwise, 
 - A "Edit environment variable" User Interface will appear. There, click "New" and paste Julia installation directory `C:\Users\JohnDoe\AppData\Local\Programs\Julia-<version>\bin`. 
 - Click OK. 
     
-Now you can directly run Julia from the terminal by typing `julia`. Additionally, you can run any Julia script by typing `julia script.jl`.
+Now you can directly run Julia from the terminal by typing `julia`. Additionally, you can run any Julia script by typing `julia script.jl`. Note that instructions may vary for older Windows versions (XP, 7, 8). Please check the [platform specific instructions link](https://julialang.org/downloads/platform/) for further details.
 
 * ### Linux
+
+Linux offers the easiest options to run Julia from the terminal. You can either create a symlink to Julia inside a folder on your system PATH, or add Julia's bin directory (full path) to your system PATH environment variable. The latter choice is preferred. To do it, you can edit `~/.bashrc` (or `~/.bash_profile`) file. Open it in your text editor of choice and add the following line:
+
+    export PATH="$PATH:/path/to/<Julia directory>/bin"
+    
+Like this, you should be able to run Julia directly from the shell by typing `julia`. You can also run a Julia script from the terminal by typing `julia script.jl`.
+
+## 2.3 Required Julia packages
 
 Additionally, the model requires some Julia built-in packages to be preinstalled before running simulations. Once you have installed Julia in your computer, you can download and install any Julia package by opening the Julia Command-Line (type `julia` in your terminal) and entering the specific package environment Pkg prompt (type `]` in Julia Command-Line). Once you have accessed Pkg prompt, type:
 
