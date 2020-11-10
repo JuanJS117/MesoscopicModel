@@ -41,14 +41,18 @@ If you downladed Julia version 1.5, previous command will look like this
 
     ln -s /Applications/Julia-1.5.app/Contents/Resources/julia/bin/julia /usr/local/bin/julia
     
-You have just created a symlink to your Julia version. Once done, you can open a terminal and run Julia by simply typing `julia` in the terminal. Moreover, you can run a Julia script directly from the terminal by typing `julia code.jl`. This is the preferred way to execute the model in macOS. 
+You have just created a symlink to your Julia version. Once done, you can open a terminal and run Julia by simply typing `julia` in the terminal. Moreover, you can run a Julia script directly from the terminal by typing `julia script.jl`. This is the preferred way to execute the model in macOS. 
 
 * ### Windows
 
-In Windows, you will need to add Julia executable directory to PATH. Otherwise, you will need to type the whole path each time you want to run Julia (C:\Users\myusername\AppData\Local\Julia-<version> by default). Steps for Windows 10 are listed below:
-     1. Open cmd (press Windows Key + R), type `rundll132 sysdm.cpl,EditEnvironmentVariables`, and hit enter.
-     2. Go to either "User Variables" or "System Variables" section, find the row with "Path", and click edit.ib     * A "Edit environment variable" User Interface will appear. Click "New" and paste the Julia installation directory `C:\Users\myusername\AppData\Local\Julia-<version>\`
-     3. Open cmd (press Windows Key + R), type `rundll132 sysdm.cpl,EditEnvironmentVariables`, and hit enter.
+In Windows, you will need to add Julia executable directory to PATH. Otherwise, you will need to type the whole path each time you want to run Julia (`C:\Users\myusername\AppData\Local\Julia-<version>\bin\julia.exe` by default). Steps for Windows 10 are listed below:
+    
+- Open cmd (press Windows Key + R), type `rundll132 sysdm.cpl,EditEnvironmentVariables`, and hit enter.
+- Go to either "User Variables" or "System Variables" section, find the row with "Path", and click edit.ib     * A "Edit environment variable" User Interface will appear. Click "New" and paste the Julia installation directory `C:\Users\myusername\AppData\Local\Julia-<version>\`
+- A "Edit environment variable" User Interface will appear. There, click "New" and paste Julia installation directory `C:\Users\JohnDoe\AppData\Local\Programs\Julia-<version>\bin`. 
+- Click OK. 
+    
+Now you can directly run Julia from the terminal by typing `julia`. Additionally, you can run any Julia script by typing `julia script.jl`.
 
 * ### Linux
 
