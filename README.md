@@ -87,6 +87,8 @@ The required packages for running the model are:
 - **[Random](https://docs.julialang.org/en/v1/stdlib/Random/).** Here it is provided a way to generate random numbers. It is used to random sample values from specific probability distributions.
 - **[DelimitedFiles](https://docs.julialang.org/en/v1/stdlib/DelimitedFiles/).** File I/O (input/output) is a critical point of the model. This package is used to enhance computational time required for I/O tasks.
 
+### 2.4 Model's core modules
+
 Finally, you have to download the [five main modules](https://github.com/JuanJS117/MesoscopicModel/tree/main/Core%20modules) that contain core model's codes. Those are:
 
 - **[main.jl](https://github.com/JuanJS117/MesoscopicModel/blob/main/Core%20modules/main.jl)** Principal module. It loads all the other modules and performs a single tumor simulation. If you want to run a simulation, you must call this module from the terminal by typing `julia main.jl #`, with # being a custom number, used to identify your simulation.
