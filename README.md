@@ -1,8 +1,8 @@
 # Mesoscopic Model 1.0
 
-## A discrete, stochastic, on-lattice, multicompartmental, mesoscale and 3D computational simulation tool to study evolutionary dynamics and heterogeneity during tumor growth
+### A discrete, stochastic, on-lattice, multicompartmental, mesoscale and 3D computational simulation tool to study evolutionary dynamics and heterogeneity during tumor growth
 
-### 1. Description
+## 1. Description
 
 Here we put forward the mesoscopic model, a simulation platform intended to reproduce tumor growth and progression *in silico*, in a way that evolutionary dynamics and intratumor heterogeneity can be studied and related to other macroscopic tumor features. The model works at the mesoscopic scale, integrating both information at the cellular level, and sizeable clinically-relevant tumors. In doing so, whole simulated tumors with nearly 6 cm of diameter and up to 10<sup>10</sup> cells can be simulated at considerably fast times (2~5 min). The model let us implement mutational and CNV information that affects the way cells behave and interact with each other, while keeping the same resolution as clinical images, so that real PET and/or MRI images can be compared with model results. An example of this is shown in image below: in **A)**, we can see a MRI image of a real glioblastoma, while in **B)**, several *in silico* tumor sections are depicted. It is noticeable that the lobules appearing in the real glioblastoma are reproduced by the model, emerging in simulated tumors.
 
@@ -19,15 +19,15 @@ Thanks to this setup, we can keep track of all clonal populations, to see how ce
 Further model details and results can be seen by reading the works the mesoscopic model has appeared in so far. All of them are mentioned in the **Publications** section. If you use the model or cite it in any papers of yours, we kindly ask you to reference our work. More details regarding this are provided in the **Credits** section.
 
 
-### 2. Installation and requirements
+## 2. Installation and requirements
 
 Down below we detail every required step to run a simulation and visualize output files. We encourage users to follow carefully every instruction, as they have been thoroughly tested for proper code execution. Nevertheless, in case any problem arises during any step (due to installation in different OS), feel free to contact any of the people listed at the end of this page.
 
-## 2.1 Julia installation
+### 2.1 Julia installation
 
 The model is written in Julia, so in order to run a tumor simulation, you need to install Julia in your computer. You can download Julia from [here](https://julialang.org/downloads/). Search for the proper version depending on your platform (Windows, macOS or Linux), and follow the [platform specific instructions](https://julialang.org/downloads/platform/). The model is built upong Julia version 1.1.1, though compatibility is guaranteed with version 1.5.2 so far. As a recommendation, we encourage users to download and install the latest stable release that supports the model. Further versions will be checked for compatibility as they are released.
 
-## 2.2 Running Julia from the terminal
+### 2.2 Running Julia from the terminal
 
 After downloading and installing Julia, some additional steps are required to run it directly from the terminal (macOS), shell (Unix) or cmd (Windows). There are other options to use Julia: in macOS, for example, Julia installation brings an app that, when oppened, triggers a specific Julia terminal that let you run commands directly from the prompt. We forget this for now, as we are not going to use it. Depending on your OS, required steps to enable calling Julia from the terminal/shell/cmd are:
 
@@ -62,7 +62,7 @@ Linux offers the easiest options to run Julia from the terminal. You can either 
     
 Like this, you should be able to run Julia directly from the shell by typing `julia`. You can also run a Julia script from the terminal by typing `julia script.jl`.
 
-## 2.3 Required Julia packages
+### 2.3 Required Julia packages
 
 Additionally, the model requires some Julia built-in packages to be preinstalled before running simulations. Once you have installed Julia in your computer, you can download and install any Julia package by opening the Julia Command-Line (type `julia` in your terminal) and entering the specific package environment Pkg prompt (type `]` in Julia Command-Line). Once you have accessed Pkg prompt, type:
 
@@ -78,7 +78,7 @@ in order to install desired packages. The required packages for running the mode
 Finally, you have to download the five main modules that contain core model codes. Those are "main.jl", "constants.jl", "grid.jl", "tools.jl" and "monitor.jl". You also need to download the input file "Param_dist.txt", that contains distributions of cell processes' characteristic times to sample from. Place them in a custom folder, where you will run tumor simulations.
 
 
-### 3. Usage
+## 3. Usage
 
 Now you are ready to play with the model. To run a single simulation, open the terminal and navigate to the folder where you placed core modules by typing in your command-line:
 
@@ -109,7 +109,7 @@ In Windows, the sintaxis is slightly different.
 Once all simulations have finished, you will have *N* new folders with simulation files. Although this is much less tedious, you still have to wait for each simulation to finish until the next one starts. You can always open several terminals at once, and split the *N* simulations you need to run into all opened terminals. 
 
 
-### 4. Simulation files
+## 4. Simulation files
 
 Once you have run your first simulation, navigate to the newly created 'Sim#' folder. Here you will find a bunch of files, most of them being named like this: *Gen_space_####.txt*. Those files contain a system snapshot at iteration #### (snapshots are usually taken each 20 iterations). If you open any of them, you will see a structure containing several rows similar to the one below:
 
@@ -124,7 +124,7 @@ Meaning that each row contains all cell numbers within a voxel. The first three 
 By knowing how this file is structured, it is easy to decode it and analyze any parameter of interest. In this repository a Matlab code is uploaded, that contains a simple function to retrieve these parameters and plot them, by reading the files generated during simulation.
 
 
-### 5. Editing the code
+## 5. Editing the code
 
 Current version of the model works with in-code parameters, so if you want to modify any of them, you must edit 'constants.jl' module. Any text editor will suit for this purpose; however, here we recommend using Atom. You can download Atom from [here](https://atom.io). As a hackable editor, you can install several packages that will let you work with Julia codes, and even test and debug them directly on Atom. The basic packages required to comfortably work with Julia in Atom are:
 
@@ -138,17 +138,17 @@ Install these packages in Atom looking for them in `Preferences -> Packages`, an
 Atom is just an option, and the one we chose to work with the model. However, feel free to read and edit the code in whatever way you feel more comfortable with. Jupyter Notebook is another recommended editor. [Here](https://datatofish.com/add-julia-to-jupyter/) you can find a tutorial to setup Julia in Jupyter Notebook, and run Julia code within it.
 
 
-### 6. Reproducibility
+## 6. Reproducibility
 
 In order to run simulations, the model requires the 'Param_dist.txt' file, from which it samples random characteristic times of cell processes as input parameters. The file posted in this repository is the same that has been used [here](https://www.biorxiv.org/content/10.1101/2020.08.18.255422v1) to run simulations, as it is adapted to the case of glioblastoma. However, you can change it freely to run simulations under different conditions. 
 
 
-### 7. Tumor graphics
+## 7. Tumor graphics
 
 As you may already noticed, the core modules written in Julia do not provide any graphical representation of *in silico* tumors. However, simulation files contain all ingredients required to produce any desired tumor representations. In this repository we attach some Matlab functions that allows the user to decode simulation files and produce many different plots, which are helpful at providing a clearer understanding of what is going on inside tumor guts.
 
 
-### 8. Future work
+## 8. Future work
 
 Currently we are focused on properly parameterizing the model with genetic/clinical data and bayesian algorithms, in order to reproduce realistic glioblastomas. As the model is general enough, in theory it allows for reproducing any type of tumor; however, that would require a much more basic previous parameterization, to define a proper number of alterations to be considered, and a set of characteristic times for basic cell processes. A future line of work is to define sets of parameters that are associated with certain kinds of tumors, so that any of them can be simulated in no time, without requiring any previous parameter search.
 
@@ -161,7 +161,7 @@ Although basic in its design, the model is complex enough to allow for the emerg
 * **Vasculature.** The model does not consider a proper vascular system, so hypoxia and lack of nutrients are restricting conditions that can only be implicitly modelled in the system by now. However, developing a mesoscopic version of the vasculature would let us include both of these conditions in a much more precise way, and even allowing us for the inclusion of anti-angiogenic therapies, such as bevacizumab.
 
 
-### 9. Publications
+## 9. Publications
 
 The model has appeared in 1 publication and 2 preprints so far. Both preprints are currently under evaluation for publication. In this section we list the model's contribution to these published works:
 
@@ -176,7 +176,7 @@ A earlier version of the mesoscopic model was used in this study to explore this
 * **Evolutionary dynamics at the tumor edge reveals metabolic imaging biomarkers.** Juan Jiménez-Sánchez, Jesús J. Bosque, Germán A. Jiménez-Londoño, David Molina-García, Álvaro Martínez-Rubio, Julián Pérez-Beteta, Carmen Ortega-Sabater, Antonio F. Honguero-Martínez, Ana M. García-Vicente, Gabriel F. Calvo, Víctor M. Pérez-García. **medRxiv 2020.10.06.20204461.** *Submitted to PNAS.* doi: https://doi.org/10.1101/2020.10.06.20204461 <br/>
 This work proposes a new biomarker, the NPAC, that measures the distance between a tumor's centroid and its spot of maximum cell activity, normalized by the tumor radius. In short, NPAC goes from 0 to 1, measuring how far the maximum activity spot is placed from tumor centroid: a 0 would indicate that activity is mostly localized at the center, while a 1 would indicate that activity is displaced towards tumor border. NPAC has been studied for two cohorts of patients, one of them with non-small cell lung adenocarcinoma (NSCLC) and another with breast cancer. For both of them, survival analysis revealed that NPAC has prognostic value, and can be used as a measure to provide an estimate of tumor malignancy. The mesoscopic model was used (among others) to comprehensively assess NPAC behaviour in two sets of *in silico* tumors, one of them intending to resemble NSCLC, and the other one resembling breast cancer. It also provided a description of NPAC dynamics during tumor growth, showing that maximum activity spot is displaced towards the tumor border as the tumor grows and increases its heterogeneity. 
 
-### 10. Credits
+## 10. Credits
 
 If you use the mesoscopic model, please cite the following work:
 
