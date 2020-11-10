@@ -27,19 +27,30 @@ Down below we detail every required step to run a simulation and visualize outpu
 
 The model is written in Julia, so in order to run a tumor simulation, you need to install Julia in your computer. You can download Julia from [here](https://julialang.org/downloads/). Search for the proper version depending on your platform (Windows, macOS or Linux), and follow the [platform specific instructions](https://julialang.org/downloads/platform/). The model is built upong Julia version 1.1.1, though compatibility is guaranteed with version 1.5.2 so far. As a recommendation, we encourage users to download and install the latest stable release that supports the model. Further versions will be checked for compatibility as they are released.
 
-## 2.2 Add Julia to path
+## 2.2 Running Julia from the terminal
 
-After downloading and installing Julia, some additional steps are required to run it directly from the terminal (macOS), shell (Unix) or cmd (Windows). In macOS, Julia installation brings an app that, when oppened, triggers a specific Julia terminal that let you run commands directly from the prompt. We forget this for now, as we are not going to use it. Depending on your OS, required steps to enable calling Julia from the terminal/shell/cmd are:
+After downloading and installing Julia, some additional steps are required to run it directly from the terminal (macOS), shell (Unix) or cmd (Windows). There are other options to use Julia: in macOS, for example, Julia installation brings an app that, when oppened, triggers a specific Julia terminal that let you run commands directly from the prompt. We forget this for now, as we are not going to use it. Depending on your OS, required steps to enable calling Julia from the terminal/shell/cmd are:
 
-* # macOS
+* ### macOS
 
-To run Julia from the terminal, navigate to <usr/bin>
+To run Julia from the terminal, navigate to <usr/local/bin> and remove julia file. After doing so, type the following in your terminal:
+
+    ln -s /Applications/Julia-<version>.app/Contents/Resources/julia/bin/julia /usr/local/bin/julia
+    
+If you downladed Julia version 1.5, previous command will look like this
 
     ln -s /Applications/Julia-1.5.app/Contents/Resources/julia/bin/julia /usr/local/bin/julia
+    
+You have just created a symlink to your Julia version. Once done, you can open a terminal and run Julia by simply typing `julia` in the terminal. Moreover, you can run a Julia script directly from the terminal by typing `julia code.jl`. This is the preferred way to execute the model in macOS. 
 
-* # Windows
+* ### Windows
 
-* # Linux
+In Windows, you will need to add Julia executable directory to PATH. Otherwise, you will need to type the whole path each time you want to run Julia (C:\Users\myusername\AppData\Local\Julia-<version> by default). Steps for Windows 10 are listed below:
+     * Open cmd (press Windows Key + R), type `rundll132 sysdm.cpl,EditEnvironmentVariables`, and hit enter.
+     * Go to either "User Variables" or "System Variables" section, find the row with "Path", and click edit.ib     * A "Edit environment variable" User Interface will appear. Click "New" and paste the Julia installation directory `C:\Users\myusername\AppData\Local\Julia-<version>\`
+     * Open cmd (press Windows Key + R), type `rundll132 sysdm.cpl,EditEnvironmentVariables`, and hit enter.
+
+* ### Linux
 
 Additionally, the model requires some Julia built-in packages to be preinstalled before running simulations. Once you have installed Julia in your computer, you can download and install any Julia package by opening the Julia Command-Line (type `julia` in your terminal) and entering the specific package environment Pkg prompt (type `]` in Julia Command-Line). Once you have accessed Pkg prompt, type:
 
