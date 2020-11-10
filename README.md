@@ -83,11 +83,12 @@ For some Julia versions, these methods may not work. If one of them does not wor
 
 The required packages for running the model are:
 
-- **Distributions**
-- **Random**
-- **DelimitedFiles**
+- **[Distributions](https://github.com/JuliaStats/Distributions.jl).** This package includes several probability distributions and associated functions. It is used to generate specific probability distributions in a computationally-efficient manner.
+- **[Random](https://docs.julialang.org/en/v1/stdlib/Random/).** Here it is provided a way to generate random numbers. It is used to random sample values from specific probability distributions.
+- **[DelimitedFiles](https://docs.julialang.org/en/v1/stdlib/DelimitedFiles/).** File I/O (input/output) is a critical point of the model. This package is used to enhance computational time required for I/O tasks.
 
-Finally, you have to download the five main modules that contain core model's codes. Those are:
+Finally, you have to download the [five main modules](https://github.com/JuanJS117/MesoscopicModel/tree/main/Core%20modules) that contain core model's codes. Those are:
+
 - **main.jl**
 - **constants.jl**
 - **grid.jl**
