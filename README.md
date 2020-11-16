@@ -139,11 +139,20 @@ Once you have run your first simulation, navigate to the newly created 'Sim#' fo
     
 Files come without a header, so you won't know what does each column mean unless you read this document. The header for all of them is:
 
-    Xcoord Ycoord Zcoord Pop1 Pop2 Pop3 Pop4 Pop5 Pop6 Pop7 Pop8 Necrotics Newborn
+    Xcoord Ycoord Zcoord Pop1 Pop2 Pop3 Pop4 Pop5 Pop6 Pop7 Pop8 Activity Necrotics
     
-Meaning that each row contains all cell numbers within a voxel. The first three columns indicate the spatial coordinates of the voxel, and the following eight columns contain the cell numbers of each clonal population. Notice that in the example there are 8 clonal populations, due to a simulation being done considering 3 possible alterations. If you work with a different number of alterations *G*, expect a number of columns equal to 5+2<sup>G</sup>. The last two columns represent the number of necrotic and newborn cells within the voxel, respectively. Note that, while necrotics accumulate throught time (their number increase as a monotonic function), newborn cells are snapshots of the system at a given iteration.
+Meaning that each row contains all cell numbers within a voxel. The first three columns indicate the spatial coordinates of the voxel, and the following eight columns contain the cell numbers of each clonal population. Notice that in the example there are 8 clonal populations, due to a simulation being done considering 3 possible alterations. If you work with a different number of alterations *G*, expect a number of columns equal to 5+2<sup>G</sup>. The last two columns represent the number of newborn and necrotic cells within the voxel, respectively. Note that, while necrotics accumulate throught time (their number increase as a monotonic function), newborn cells are snapshots of the system at a given iteration. According to the row shown, voxel (29,42,40) will be populated with 1094 alive and 0 dead cells. From these 1094 cells, 7 belong to 1st clonal population, 925 to 5th, 99 to 6th, and 7 to 7th clonal population. From previous iteration, 56 new cells have been born.
 
-By knowing how this file is structured, it is easy to decode it and analyze any parameter of interest. In this repository a Matlab code is uploaded, that contains a simple function to retrieve these parameters and plot them, by reading the files generated during simulation.
+By knowing how this file is structured, it is easy to decode it and analyze any parameter of interest. In this repository we have uploaded [two Matlab scripts](https://github.com/JuanJS117/MesoscopicModel/tree/main/Matlab%20graphics) for simulation file decoding:
+
+* [dcode_simfiles.m](https://github.com/JuanJS117/MesoscopicModel/blob/main/Matlab%20graphics/dcode_simfiles.m) reads all snapshot files from a given simulation, and calculates tumor volume (as the number of voxels exceeding 20% of carrying capacity), total number of cells within the tumor, total number of necrotic cells, total activity (newborn cells), and Shannon and Simpson's indexes. While these variables are stored as arrays, containing their values each 20 iterations, this Matlab function also returns 4 cell structures containing info per voxel about total cell number, cell number per clonal population, necrotic cells and activity, respectively. All it requires as input parameter is the number of the simulation to be decoded. From Matlab console, you can run this function like this:
+
+        dcode_simfiles(nsim)
+        
+    with nsim being the number of the simulation you want to process.
+    
+* [geometric_features.m](https://github.com/JuanJS117/MesoscopicModel/blob/main/Matlab%20graphics/geometric_features.m) works at a deeper level than previous function. In fact, it internally runs dcode_simfiles.m to retrieve basic tumor info, and then processes it to calculate tumor surface, tumor volume, rim width and surface regularity. It does so only for snapshot files where tumor volume is above 1 cm^3.
+
 
 
 ### 3.2 Editing the code
