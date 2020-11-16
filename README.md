@@ -147,7 +147,7 @@ By knowing how this file is structured, it is easy to decode it and analyze any 
 
 * [dcode_simfiles.m](https://github.com/JuanJS117/MesoscopicModel/blob/main/Matlab%20graphics/dcode_simfiles.m) reads all snapshot files from a given simulation, and calculates tumor volume (as the number of voxels exceeding 20% of carrying capacity), total number of cells within the tumor, total number of necrotic cells, total activity (newborn cells), and Shannon and Simpson's indexes. While these variables are stored as arrays in separate files, containing variables' values each 20 iterations, this Matlab function also returns 4 cell structures containing info per voxel about total cell number (poptot), cell number per clonal population (pops), necrotic cells (nec) and activity (act), respectively. All it requires as input parameter is the number of the simulation to be decoded. From Matlab console, you can run this function like this:
 
-        [poptot,pops,nec,act] = dcode_simfiles(nsim);
+        dcode_simfiles(nsim);
         
     with nsim being the number of the simulation you want to process. Note that, in order to run this function, its corresponding Matlab script must have been added to Matlab path. Additionally, you must be placed in the directory containing simulation folder.
     
@@ -156,10 +156,65 @@ By knowing how this file is structured, it is easy to decode it and analyze any 
         geometric_features(nsim)
         
     With nsim being the number of the simulation you want to process.
+    
+    
+### 3.2 Tumor graphics
+
+As you may already noticed, the core modules written in Julia do not provide any graphical representation of *in silico* tumors. However, simulation files contain all ingredients required to produce any desired tumor representations. In this repository we provide some examples to reproduce tumor depictions like the ones shown in [model's preprint](https://www.biorxiv.org/content/10.1101/2020.08.18.255422v1). Notice that these depictions are intended to provide a clearer understanding of what is going on inside tumor guts.
+
+In order for all scripts below to run properly, you must run [dcode_simfiles.m](https://github.com/JuanJS117/MesoscopicModel/blob/main/Matlab%20graphics/dcode_simfiles.m) function before, and store its output into custom variables like this
+
+    [poptot,pops,nec,act] = dcode_simfiles(nsim);
+    
+With these ingredients, you have all that is required to play with in silico tumor visualization
+
+#### 3.2.1 MRI slice
+
+    nsnapshots = size(poptot,2);
+    snapshot = round(nsnapshots*0.85);
+    figpos = get(groot, 'ScreenSize');
+    w = figure('Name','In-silico MRI slice','Units','pixels','OuterPosition',[100 100 2*figpos(4)/3 2*figpos(4)/3]);
+    colormap(gray)
+    imagesc(poptot{snapshot}(:,:,40))
+    axis tight equal
+    axis off
+    set(gcf,'color','w');
 
 
+#### 3.2.2 PET slice
 
-### 3.2 Editing the code
+    nsnapshots = size(poptot,2);
+    snapshot = round(nsnapshots*0.55);
+    figpos = get(groot, 'ScreenSize');
+    ventana = figure('Name','In-silico PET slice','Units','pixels','OuterPosition',[100 100 2*figpos(4)/3 2*figpos(4)/3]);
+    colormap(flipud(gray))
+    imagesc(act{snapshot}(:,:,40))
+    axis tight equal
+    axis off
+    set(gcf,'color','w');
+    
+    
+#### 3.2.3 3D Tumor rendering
+
+    col1 = [27 161 226]./255;   % Cyan
+    nsnapshots = size(poptot,2);
+    snapshot = round(nsnapshots*0.95);
+    popT = poptot{snapshot};
+    polyT = popT > 0.15*max(popT(:));
+    figpos = get(groot, 'ScreenSize');
+    w = figure('Name','3D Tumor rendering','Units','pixels','OuterPosition',[0 0 figpos(4) figpos(4)]);
+    hiso1 = patch(isosurface(smooth3(polyT),0.5),'FaceColor',col1,'EdgeColor','none');
+    view(3)
+    fig = gcf;
+    fig.Renderer = 'opengl';
+    camlight
+    lighting phong
+    axis equal
+    axis([0 80 0 80 0 80])
+    axis off
+
+
+### 3.3 Editing the code
 
 Current version of the model works with in-code parameters, so if you want to modify any of them, you must edit 'constants.jl' module. Any text editor will suit for this purpose; however, here we recommend using Atom. You can download Atom from [here](https://atom.io). As a hackable editor, you can install several packages that will let you work with Julia codes, and even test and debug them directly on Atom. The most important is arguably [Juno](https://junolab.org), a Julia environment embedded in Atom. The basic packages required to comfortably work with Julia in Atom are:
 
@@ -173,14 +228,12 @@ Install these packages in Atom looking for them in `Preferences -> Packages`, an
 Atom is just an option, and the one we chose to work with the model. However, feel free to read and edit the code in whatever way you feel more comfortable with. Jupyter Notebook is another recommended editor. [Here](https://datatofish.com/add-julia-to-jupyter/) you can find a tutorial to setup Julia in Jupyter Notebook, and run Julia code within it.
 
 
-### 3.3 Reproducibility
+### 3.4 Reproducibility
 
 In order to run simulations, the model requires the 'Param_dist.txt' file, from which it samples random characteristic times of cell processes as input parameters. The file posted in this repository is the same that has been used [here](https://www.biorxiv.org/content/10.1101/2020.08.18.255422v1) to run simulations, as it is adapted to the case of glioblastoma. However, you can change it freely to run simulations under different conditions. 
 
 
-### 3.4 Tumor graphics
 
-As you may already noticed, the core modules written in Julia do not provide any graphical representation of *in silico* tumors. However, simulation files contain all ingredients required to produce any desired tumor representations. In this repository we attach some Matlab functions that allows the user to decode simulation files and produce many different plots, which are helpful at providing a clearer understanding of what is going on inside tumor guts.
 
 
 ## 4. Future work
