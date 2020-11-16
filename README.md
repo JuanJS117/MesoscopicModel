@@ -256,7 +256,7 @@ The model has appeared in 1 publication and 2 preprints so far. Both preprints a
 * **A mesoscopic simulator to uncover heterogeneity and evolutionary dynamics in tumors.** Juan Jiménez-Sánchez, Álvaro Martínez-Rubio, Anton Popov, Julián Pérez-Beteta, Youness Azimzade, David Molina-García, Juan Belmonte-Beitia, Gabriel F. Calvo, Víctor M. Pérez-García.
 **bioRxiv 2020.08.18.255422.** *Submitted to PLOS Computational Biology.* doi: https://doi.org/10.1101/2020.08.18.255422 
 
-This work is the model's *opera prima*; every aspect of its functionality is detailed in this manuscript. Additionally, the model is used to study the specific case of glioblastoma, in order to validate it and to give a glimpse of what it can do.
+    This work is the model's *opera prima*; every aspect of its functionality is detailed in this manuscript. Additionally, the model is used to study the specific case of glioblastoma, in order to validate it and to give a glimpse of what it can do.
 
 * **Universal scaling laws rule explosive growth in human cancers.** Víctor M. Pérez-García, Gabriel F. Calvo, Jesús J. Bosque, Odelaisy León-Triana, Juan Jiménez-Sánchez, Julián Pérez-Beteta, Juan Belmonte-Beitia, Manuel Valiente, Lucía Zhu, Pedro García-Gómez, Pilar Sánchez-Gómez, Esther Hernández-San Miguel, Rafael Hortigüela, Youness Azimzade, David Molina-García, Álvaro Martínez-Rubio, Ángel Acosta Rojas, Ana Ortiz de Mendivil, Francois Vallette, Philippe Schucht, Michael Murek, María Pérez-Cano, David Albillo, Antonio F. Honguero Martínez, Germán A. Jiménez Londoño, Estanislao Arana, Ana M. García Vicente. **Nature Physics 2020.** doi: https://doi.org/10.1038/s41567-020-0978-6
 
