@@ -97,7 +97,7 @@ Finally, you have to download the [five main modules](https://github.com/JuanJS1
 - **[monitor.jl](https://github.com/JuanJS117/MesoscopicModel/blob/main/Core%20modules/monitor.jl)** This module contains all functions that allow monitoring tumor macroscopic variables during time, such as volume and heterogeneity. 
 - **[tools.jl](https://github.com/JuanJS117/MesoscopicModel/blob/main/Core%20modules/tools.jl)** This module includes simple subroutines to perform task such as saving tumor status files, and displaying tumor status in the terminal.
 
-You also need to download the input file "**[Param_dist.txt](https://github.com/JuanJS117/MesoscopicModel/blob/main/Core%20modules/Param_dist.txt)**", that contains distributions of cell processes' characteristic times to sample from. Place them in a custom folder, where you will run tumor simulations.
+You also need to download the input file **[Param_dist.txt](https://github.com/JuanJS117/MesoscopicModel/blob/main/Core%20modules/Param_dist.txt)**, that contains distributions of cell processes' characteristic times to sample from. Place them in a custom folder, where you will run tumor simulations.
 
 
 ## 3. Usage
