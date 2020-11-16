@@ -21,7 +21,7 @@ Further model details and results can be seen by reading the works the mesoscopi
 
 ## 2. Installation and requirements
 
-Down below we detail every required step to run a simulation and visualize output files. We encourage users to follow carefully every instruction, as they have been thoroughly tested for proper code execution. Nevertheless, in case any problem arises during any step (due to installation in different OS), feel free to contact any of the people listed at the end of this page.
+Down below we detail every required step to run a simulation and visualize output files. We encourage users to follow carefully every instruction, as they have been thoroughly tested for proper code execution. Nevertheless, in case any problem arises during any step (due to installation in different OS), feel free to contact any of the people listed at the end of this page for troubleshooting.
 
 ### 2.1 Julia installation
 
