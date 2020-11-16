@@ -145,13 +145,17 @@ Meaning that each row contains all cell numbers within a voxel. The first three 
 
 By knowing how this file is structured, it is easy to decode it and analyze any parameter of interest. In this repository we have uploaded [two Matlab scripts](https://github.com/JuanJS117/MesoscopicModel/tree/main/Matlab%20graphics) for simulation file decoding:
 
-* [dcode_simfiles.m](https://github.com/JuanJS117/MesoscopicModel/blob/main/Matlab%20graphics/dcode_simfiles.m) reads all snapshot files from a given simulation, and calculates tumor volume (as the number of voxels exceeding 20% of carrying capacity), total number of cells within the tumor, total number of necrotic cells, total activity (newborn cells), and Shannon and Simpson's indexes. While these variables are stored as arrays, containing their values each 20 iterations, this Matlab function also returns 4 cell structures containing info per voxel about total cell number, cell number per clonal population, necrotic cells and activity, respectively. All it requires as input parameter is the number of the simulation to be decoded. From Matlab console, you can run this function like this:
+* [dcode_simfiles.m](https://github.com/JuanJS117/MesoscopicModel/blob/main/Matlab%20graphics/dcode_simfiles.m) reads all snapshot files from a given simulation, and calculates tumor volume (as the number of voxels exceeding 20% of carrying capacity), total number of cells within the tumor, total number of necrotic cells, total activity (newborn cells), and Shannon and Simpson's indexes. While these variables are stored as arrays in separate files, containing variables' values each 20 iterations, this Matlab function also returns 4 cell structures containing info per voxel about total cell number, cell number per clonal population, necrotic cells and activity, respectively. All it requires as input parameter is the number of the simulation to be decoded. From Matlab console, you can run this function like this:
 
         dcode_simfiles(nsim)
         
-    with nsim being the number of the simulation you want to process.
+    with nsim being the number of the simulation you want to process. Note that, in order to run this function, its corresponding Matlab script must have been added to Matlab path. Additionally, you must be placed in the directory containing simulation folder.
     
-* [geometric_features.m](https://github.com/JuanJS117/MesoscopicModel/blob/main/Matlab%20graphics/geometric_features.m) works at a deeper level than previous function. In fact, it internally runs dcode_simfiles.m to retrieve basic tumor info, and then processes it to calculate tumor surface, tumor volume, rim width and surface regularity. It does so only for snapshot files where tumor volume is above 1 cm^3.
+* [geometric_features.m](https://github.com/JuanJS117/MesoscopicModel/blob/main/Matlab%20graphics/geometric_features.m) works at a deeper level than previous function. In fact, it internally runs dcode_simfiles.m to retrieve basic tumor info, and then processes it to calculate tumor surface, tumor volume, rim width and surface regularity. It does so only for snapshot files where tumor volume is above 1 cm<sup>3</sup>. These geometric variables are calculated using the marching cubes algorithm. To run this function, type in the Matlab console:
+
+        geometric_features(nsim)
+        
+    With nsim being the number of the simulation you want to process.
 
 
 
