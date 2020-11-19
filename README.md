@@ -33,7 +33,14 @@ After downloading and installing Julia, some additional steps are required to ru
 
 * ### macOS
 
-To run Julia from the terminal, navigate to <usr/local/bin> and remove julia file. After doing so, type the following in your terminal:
+To run Julia from the terminal, navigate to <usr/local/bin> and remove julia file (if present). This folder is hidden, so in order to navigate to it, you may either:
+
+- Go to Finder, press `Command+Shift+G`, and type `/usr/local/bin/`. This will open the folder in your file explorer.
+- Open the terminal and type `cd /usr/local/bin`.
+
+Some operations are forbidden without the right permissions. If you try to remove it from the terminal, you will require superuser permission. Simply add a `sudo` before your command and, when prompted, type your user password.
+
+After doing so, type the following in your terminal:
 
     ln -s /Applications/Julia-<version>.app/Contents/Resources/julia/bin/julia /usr/local/bin/julia
     
@@ -41,7 +48,11 @@ If you downladed Julia version 1.5, previous command will look like this
 
     ln -s /Applications/Julia-1.5.app/Contents/Resources/julia/bin/julia /usr/local/bin/julia
     
-You have just created a symlink to your Julia version. Once done, you can open a terminal and run Julia by simply typing `julia` in the terminal. Moreover, you can run a Julia script directly from the terminal by typing `julia script.jl`. This is the preferred way to execute the model in macOS. 
+You won't be able to perform previous task without superuser permission. To address this issue, you can use `sudo` again. Type this in the terminal:
+    
+    sudo ln -s /Applications/Julia-1.5.app/Contents/Resources/julia/bin/julia /usr/local/bin/julia
+        
+and, when prompted, type your user password. You have just created a symlink to your Julia version. Once done, you can open a terminal and run Julia by simply typing `julia` in the terminal. Moreover, you can run a Julia script directly from the terminal by typing `julia script.jl`. This is the preferred way to execute the model in macOS. 
 
 * ### Windows
 
