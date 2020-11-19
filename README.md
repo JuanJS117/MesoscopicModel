@@ -38,7 +38,7 @@ To run Julia from the terminal, navigate to `usr/local/bin` and remove `julia` f
 - Go to Finder, press `Command+Shift+G`, and type `/usr/local/bin/`. This will open the folder in your file explorer.
 - Open the terminal and type `cd /usr/local/bin`.
 
-Some operations are forbidden without the right permissions. If you try to remove it from the terminal, you will require superuser permission. Simply add a `sudo` before your command and, when prompted, type your user password.
+Some operations are forbidden without the right permissions. If you try to remove `usr/local/bin/julia` from the terminal, you will require superuser permission. Simply add a `sudo` before your command and, when prompted, type your user password.
 
 After doing so, type the following in your terminal:
 
