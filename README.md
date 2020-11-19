@@ -70,7 +70,7 @@ Additionally, the model requires some Julia built-in packages to be preinstalled
 
         add PackageName
     
-    and let selected package to be installed. Once you are done, close Pkg environment pressing Ctrl+C, and exit Julia Command-Line by typing `close()`. You will     return to your default terminal/shell/cmd prompt.
+    and let selected package to be installed. Once you are done, close Pkg environment pressing Ctrl+C, and exit Julia Command-Line by typing `exit()`. You will     return to your default terminal/shell/cmd prompt.
 
 - Open Julia Command-Line, and type
 
