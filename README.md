@@ -227,7 +227,7 @@ With these ingredients, you have all that is required to play with in silico tum
 
 ### 3.3 Editing the code
 
-Current version of the model works with in-code parameters, so if you want to modify any of them, you must edit 'constants.jl' module. Any text editor will suit for this purpose; however, here we recommend using Atom. You can download Atom from [here](https://atom.io). As a hackable editor, you can install several packages that will let you work with Julia codes, and even test and debug them directly on Atom. The most important is arguably [Juno](https://junolab.org), a Julia environment embedded in Atom. The basic packages required to comfortably work with Julia in Atom are:
+Current version of the model does not admit input arguments, as it only works with parameters within code. If you want to modify any of them, you must edit 'constants.jl' module. Any text editor will suit for this purpose; however, here we recommend using Atom. You can download Atom from [here](https://atom.io). As a hackable editor, you can install several packages that will let you work with Julia codes, and even test and debug them directly on Atom. The most important is arguably [Juno](https://junolab.org), a Julia environment embedded in Atom. The basic packages required to comfortably work with Julia in Atom are:
 
 * **[uber-juno](https://atom.io/packages/uber-juno).** Sets up Juno IDE, a Julia environment to run Julia code interactively within Atom.
 * **[language-julia](https://atom.io/packages/language-julia).** This package provides support for Julia codes, including syntax highlighting and snippets for common Julia keywords.
@@ -241,7 +241,9 @@ Atom is just an option, and the one we chose to work with the model. However, fe
 
 ### 3.4 Reproducibility
 
-In order to run simulations, the model requires the 'Param_dist.txt' file, from which it samples random characteristic times of cell processes as input parameters. The file posted in this repository is the same that has been used [here](https://www.biorxiv.org/content/10.1101/2020.08.18.255422v1) to run simulations, as it is adapted to the case of glioblastoma. However, you can change it freely to run simulations under different conditions. 
+In this section we itemize the most relevant code parameters and constants that influence simulation outcome. The aim is to provide a comprehensive guide of them all, so that users can change them freely and experiment with different tumor properties. Note that both **'constants.jl'** module and **'Param_dist.txt'** file contain parameters fitted to produce realistic glioblastomas, such as those that appear in [here](https://www.biorxiv.org/content/10.1101/2020.08.18.255422v1).
+
+In **'Param_dist.txt'** we can see the required parameters to build uniform distributions of cellular processes' characteristic times. These distributions are used to randomly sample values for characteristic times at the start of the simulation, so the content of 'Param_dist.txt' will strongly influence simulated tumor outcome. From first to last, rows correspond to division, death, mutation and migration. As uniform distributions **U(a,b)** are defined by their bounds **a** and **b**, in 'Param_dist.txt' we provide **(b+a)/2** (mean) in the 1st column, and **(b-a)/2** (half of interval length) in the 2nd column. If you increase a given value from the 1st column, the average characteristic time of corresponding process will enlarge, making tumor cells slower when it comes to perform that process. On the other hand, if you increase a given value from the 2nd column, you will increase the interval of values that characteristic times can take, providing more variability.
 
 
 
