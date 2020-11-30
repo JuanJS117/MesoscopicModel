@@ -158,7 +158,7 @@ By knowing how this file is structured, it is easy to decode it and analyze any 
 
 * [dcode_simfiles.m](https://github.com/JuanJS117/MesoscopicModel/blob/main/Matlab%20graphics/dcode_simfiles.m) reads all snapshot files from a given simulation, and calculates tumor volume (as the number of voxels exceeding 20% of carrying capacity), total number of cells within the tumor, total number of necrotic cells, total activity (newborn cells), and Shannon and Simpson's indexes. While these variables are stored as arrays in separate files, containing variables' values each 20 iterations, this Matlab function also returns 4 cell structures containing info per voxel about total cell number (poptot), cell number per clonal population (pops), necrotic cells (nec) and activity (act), respectively. All it requires as input parameter is the number of the simulation to be decoded. From Matlab console, you can run this function like this:
 
-        dcode_simfiles(nsim);
+        dcode_simfiles(nsim)
         
     with nsim being the number of the simulation you want to process. Note that, in order to run this function, its corresponding Matlab script must have been added to Matlab path. Additionally, you must be placed in the directory containing simulation folder.
     
@@ -247,12 +247,19 @@ In **'Param_dist.txt'** we can see the required parameters to build uniform dist
 
 In **constants.jl** we can find a much broader variety of parameters. These are divided in 4 main blocks: 
 
-* **Spatio-temporal domain parameters.** With them we define the grid of voxels that will accomodate the tumor, and the temporal discretization.
-* **Starting conditions.** These set basic tumor characteristics at the start (initial cell number, etc).
-* **Characteristic times.** These times depend on values from **Param_dist.txt** file. As they have previously addresed, we do not dig deeper in them.
-* **Mutation weights.** A key set of parameters, they determine the way acquired alterations influence the rate at which tumor cells perform basic processes.
+* **Spatio-temporal domain parameters.** With them we define the grid of voxels that will accomodate the tumor and the temporal discretization. These variables are typed at lines 39-46 in **constants.jl**. 
+* **Starting conditions.** These set basic tumor characteristics at the start (initial cell number, etc). They are typed at lines 52-55 in **constants.jl**.
+* **Characteristic times.** These times depend on values from **Param_dist.txt** file. As they have been previously addresed, we do not dig deeper in them. They are typed at lines 62-74 in **constants.jl**.
+* **Mutation weights.** A key set of parameters, they determine the way acquired alterations influence the rate at which tumor cells perform basic processes. They are typed at lines 81-84 in **constants.jl**.
 
+After defining the variable type, a brief comment describes its use. Down below we list the most important variables, and how to change their value:
 
+* **deltat** sets the time step length. Current value is 4 hours. To change it, go to line 103 in **constants.jl**. Slowly growing tumors can benefit from larger values of **deltat**.
+* **tspan** and **Nstep** are used as upper bounds for simulation. As the simulation limit is determined by tumor volume instead of a fixed set of time steps, simply beware that these values are big enough to admit sufficient iterations until desired tumor volume is reached. You can change their values at lines 104 and 105 in **constants.jl**.
+* **N** is a key variable, that determines how many voxels will exist in the spatial domain (N x N x N). Currently N = 80, so there can be 80 x 80 x 80 = 5.12 * 10<sup>6<\sup> voxels in the spatial grid. You can change its value at line 106 in **constants.jl**. Beware that no boundary conditions are set, 
+*
+*
+*
 
 
 ## 4. Future work
