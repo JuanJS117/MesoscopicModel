@@ -275,7 +275,7 @@ Finally, in **grid.jl** there are several lines that set the grid according to p
 
                 G[Int64(c.N / 2), Int64(c.N / 2), Int64(c.N / 2), 1] = c.P0
 
-    To do so, modify the first three indexes `c.N / 2), Int64(c.N / 2), Int64(c.N / 2)` and select whatever voxel you want (any values between 0 and **N**). To change the initial clonal population, modify the last index and type any number between 1 and 2<sup>alt</sup>.
+    To do so, modify the first three indexes `Int64(c.N / 2), Int64(c.N / 2), Int64(c.N / 2)` and select whatever voxel you want (any values between 0 and **N**). To change the initial clonal population, modify the last index and type any number between 1 and 2<sup>alt</sup>.
 
 
 
