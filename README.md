@@ -258,7 +258,7 @@ After defining the variable type, a brief comment describes its use. Down below 
 * **tspan** and **Nstep** are used as upper bounds for simulation. As the simulation limit is determined by tumor volume instead of a fixed set of time steps, simply beware that these values are big enough to admit sufficient iterations until desired tumor volume is reached. You can change their values at lines 104 and 105 in **constants.jl**.
 * **N** is a key variable, that determines how many voxels will exist in the spatial domain (N x N x N). Currently N = 80, so there can be 80 x 80 x 80 = 5.12 * 10<sup>6</sup> voxels in the spatial grid. You can change its value at line 106 in **constants.jl**. Beware that no boundary conditions are set, so the spatial grid should contain sufficient voxels to avoid the tumor touching the grid limit during the whole simulation. 
 * **VolEnd** determines the limit size (in mm<sup>3</sup>) the tumor can reach until the simulation finishes. Its value can be changed at line 109 in **constants.jl**. 
-*
+* **alt** is the number of genes/proteins/pathways considered in the model, so that tumor cells can carry alterations in them. Note that there could exist as much as 2<sup>alt</sup> different clonal populations.
 *
 
 
