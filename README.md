@@ -207,22 +207,26 @@ With these ingredients, you have all that is required to play with in silico tum
     
 #### 3.2.3 3D Tumor rendering
 
-    col1 = [27 161 226]./255;   % Cyan
-    nsnapshots = size(poptot,2);
-    snapshot = round(nsnapshots*0.95);
-    popT = poptot{snapshot};
-    polyT = popT > 0.15*max(popT(:));
+    col1 = [27 161 226]./255; % Cyan 
+    nsnapshots = size(poptot,2); 
+    snapshot = round(nsnapshots*0.95); 
+    popT = poptot{snapshot}; 
     figpos = get(groot, 'ScreenSize');
     w = figure('Name','3D Tumor rendering','Units','pixels','OuterPosition',[0 0 figpos(4) figpos(4)]);
-    hiso1 = patch(isosurface(smooth3(polyT),0.5),'FaceColor',col1,'EdgeColor','none');
+    hold on
+    data1=smooth3(popT,'gaussian',5);
+    patch(isocaps(data1,40000),'FaceColor','interp','EdgeColor','none');
+    p1 = patch(isosurface(data1,40000),'FaceColor',col1,'EdgeColor','none');
+    isonormals(data1,p1);
     view(3)
+    hold off
     fig = gcf;
-    fig.Renderer = 'opengl';
-    camlight
-    lighting phong
-    axis equal
-    axis([0 80 0 80 0 80])
-    axis off
+    fig.Renderer = 'zbuffer';
+    camlight left
+    lighting gouraud
+    material shiny
+    set(gca, 'Color', 'none');
+    axis equal tight off
 
 
 ### 3.3 Editing the code
