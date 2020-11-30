@@ -262,8 +262,21 @@ After defining the variable type, a brief comment describes its use. Down below 
 
                 binGc = string(Int(binGb[1]), Int(binGb[2]), Int(binGb[3]))
                 
-to include as much elements as **alt** value.
-* **P0** is the number of initial cells.
+    to include as much elements as **alt** value. For example, if you make **alt** = 4, change previous line by this:
+
+                binGc = string(Int(binGb[1]), Int(binGb[2]), Int(binGb[3]), Int(binGb[4]))
+    
+* **P0** is the number of initial cells. It is set to 1 by default. To modify it, go to line 111 in **constants.jl**.
+* **K** is the carrying capacity of a single voxel. To change its value, go to line 112 in **constants.jl**.
+
+Finally, in **grid.jl** there are several lines that set the grid according to previous parameters and constants. Here we list some modifications that can be performed over them:
+
+* At line 74 in **grid.jl**, the initial number of cells **P0** is assigned to the unaltered clonal population, and they are placed at central voxel. You can change this if you want:
+
+                G[Int64(c.N / 2), Int64(c.N / 2), Int64(c.N / 2), 1] = c.P0
+
+    To do so, modify the first three indexes `c.N / 2), Int64(c.N / 2), Int64(c.N / 2)` and select whatever voxel you want (any values between 0 and **N**). To change the initial clonal population, modify the last index and type any number between 1 and 2<sup>alt</sup>.
+
 
 
 ## 4. Future work
