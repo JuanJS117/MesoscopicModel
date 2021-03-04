@@ -301,7 +301,7 @@ Although basic in its design, the model is complex enough to allow for the emerg
 The model has appeared in 1 publication and 2 preprints so far. Both preprints are currently under evaluation for publication. In this section we list the model's contribution to these published works:
 
 * **A mesoscopic simulator to uncover heterogeneity and evolutionary dynamics in tumors.** Juan Jiménez-Sánchez, Álvaro Martínez-Rubio, Anton Popov, Julián Pérez-Beteta, Youness Azimzade, David Molina-García, Juan Belmonte-Beitia, Gabriel F. Calvo, Víctor M. Pérez-García.
-**bioRxiv 2020.08.18.255422.** *Submitted to PLOS Computational Biology.* doi: https://doi.org/10.1101/2020.08.18.255422 
+**PLOS Computational Biology 17(2): e1008266.** doi: https://doi.org/10.1371/journal.pcbi.1008266
 
     This work is the model's *opera prima*; every aspect of its functionality is detailed in this manuscript. Additionally, the model is used to study the specific case of glioblastoma, in order to validate it and to give a glimpse of what it can do.
 
@@ -310,7 +310,7 @@ The model has appeared in 1 publication and 2 preprints so far. Both preprints a
     In this work, a scaling law relating tumor metabolism with volume is unveiled, showing that metabolic consumption increases with volume but at a faster rate. That implies a superlinear growth rate for most human tumors, which in turn leads to a explosion in finite time, when the tumor volume would become infinite if it were not for obvious restraints. The analysis performed over several cohorts of patients with different types of tumors provide enough evidence to support this scaling law. In fact, the superlinear exponent obtained from fitting real patient data to the scaling law has shown prognostic value, so that it can be used in the clinic to provide an estimation of tumor malignancy.
     A earlier version of the mesoscopic model was used in this study to explore this phenomenon. The model helped proposing the hypothesis that is tumor heterogeneity what ultimately lies behind the scaling law. A lowly heterogeneus tumor (which can be modelled as a tumor with only one clonal population) will grow in a sublineal way, giving a scaling law exponent lower than 1, while a highly heterogeneous tumor (modelled as a tumor with more than two clonal populations) will keep a sustained competition between its clonal populations, selecting the most aggressive, and increasing its growth rate in the process. This is what leads to a superlinear growth and a scaling law exponent higher than 1.
 
-* **Evolutionary dynamics at the tumor edge reveals metabolic imaging biomarkers.** Juan Jiménez-Sánchez, Jesús J. Bosque, Germán A. Jiménez-Londoño, David Molina-García, Álvaro Martínez-Rubio, Julián Pérez-Beteta, Carmen Ortega-Sabater, Antonio F. Honguero-Martínez, Ana M. García-Vicente, Gabriel F. Calvo, Víctor M. Pérez-García. **medRxiv 2020.10.06.20204461.** *Submitted to PNAS.* doi: https://doi.org/10.1101/2020.10.06.20204461 
+* **Evolutionary dynamics at the tumor edge reveals metabolic imaging biomarkers.** Juan Jiménez-Sánchez, Jesús J. Bosque, Germán A. Jiménez-Londoño, David Molina-García, Álvaro Martínez-Rubio, Julián Pérez-Beteta, Carmen Ortega-Sabater, Antonio F. Honguero-Martínez, Ana M. García-Vicente, Gabriel F. Calvo, Víctor M. Pérez-García. **PNAS February 9, 2021 118 (6) e2018110118.** doi: https://doi.org/10.1073/pnas.2018110118
 
     This work proposes a new biomarker, the NPAC, that measures the distance between a tumor's centroid and its spot of maximum cell activity, normalized by the tumor radius. In short, NPAC goes from 0 to 1, measuring how far the maximum activity spot is placed from tumor centroid: a 0 would indicate that activity is mostly localized at the center, while a 1 would indicate that activity is displaced towards tumor border. NPAC has been studied for two cohorts of patients, one of them with non-small cell lung adenocarcinoma (NSCLC) and another with breast cancer. For both of them, survival analysis revealed that NPAC has prognostic value, and can be used as a measure to provide an estimate of tumor malignancy. The mesoscopic model was used (among others) to comprehensively assess NPAC behaviour in two sets of *in silico* tumors, one of them intending to resemble NSCLC, and the other one resembling breast cancer. It also provided a description of NPAC dynamics during tumor growth, showing that maximum activity spot is displaced towards the tumor border as the tumor grows and increases its heterogeneity. 
 
@@ -319,9 +319,7 @@ The model has appeared in 1 publication and 2 preprints so far. Both preprints a
 If you use the mesoscopic model, please cite the following work:
 
 ### [**A mesoscopic simulator to uncover heterogeneity and evolutionary dynamics in tumors**](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1008266)
-Juan Jiménez-Sánchez, Álvaro Martínez-Rubio, Anton Popov, Julián Pérez-Beteta, Youness Azimzade, David Molina-García, Juan Belmonte-Beitia, Gabriel F. Calvo, Víctor M. Pérez-García <br/>
-**PLOS Computational Biology 17(2): e1008266** <br/>
-doi: https://doi.org/10.1371/journal.pcbi.1008266 <br/>
+Juan Jiménez-Sánchez, Álvaro Martínez-Rubio, Anton Popov, Julián Pérez-Beteta, Youness Azimzade, David Molina-García, Juan Belmonte-Beitia, Gabriel F. Calvo, Víctor M. Pérez-García. **PLOS Computational Biology 17(2): e1008266**. doi: https://doi.org/10.1371/journal.pcbi.1008266 <br/>
 *Early version (preprint) is accessible [here](https://www.biorxiv.org/content/10.1101/2020.08.18.255422v1).*
 
 For any inquiries regarding code usage, or any question related to troubleshooting, please address it to any of the following contributors:
