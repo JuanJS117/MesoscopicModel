@@ -4,7 +4,7 @@
 
 ## 1. Motivation
 
-Here we put forward an adapted version of the mesoscopic model to reproduce brain metastases.
+Here we put forward an adapted version of the mesoscopic model to reproduce brain metastases. This new version was motivated by the work [The macroscopic growth laws of brain metastases](https://www.medrxiv.org/content/10.1101/2022.02.03.22270146v2), where the model is extensively used to simulate brain metastases, and to explore the resulting growth exponent &beta; after tinkering with different parameters. Since the publication of [this work](https://www.nature.com/articles/s41567-020-0978-6) on the scaling laws that govern aggressive tumors, it is known that exponent &beta; provides relevant information about the growth dynamics of different cancers. Unlike other living organisms, whose scaling exponent is lower than 1, it was found that, for aggressive tumors, such exponent is tipically greater than 1.
 
 
 ## 2. Prerequisites
