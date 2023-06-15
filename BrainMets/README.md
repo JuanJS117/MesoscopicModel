@@ -37,3 +37,18 @@ The last step required is downloading the [five main modules](https://github.com
 - **[tools.jl](https://github.com/JuanJS117/MesoscopicModel/blob/main/BrainMets/tools.jl)** This module includes simple subroutines to perform task such as saving tumor status files, and displaying tumor status in the terminal.
 
 You also need to download the input file **[Param_dist.txt](https://github.com/JuanJS117/MesoscopicModel/blob/main/BrainMets/Param_dist.txt)**, that contains distributions of cell processes' characteristic times to sample from; and the initial cell distribution **[InitialCellDistribution.txt](https://github.com/JuanJS117/MesoscopicModel/blob/main/BrainMets/InitialCellDistribution.txt)**, that is used as an initial condition. Place them in a custom folder, where you will run your simulations of brain metastases.
+
+
+## 3. Usage
+
+After reading the section on model's usage in the main page of [this repository](https://github.com/JuanJS117/MesoscopicModel/tree/main) (section 3), it should be straightforward to run simulations with the mesoscopic model. However, take care, since this version requires some more arguments in the input command. While we will not cover how to run simulations in this section, we will build upon the main page's tutorial, and detail how to run a simulation of a brain metastasis using this version of the model. The general command to write in your console is:
+
+  julia main.jl SimName Vdiv Vmig
+  
+These three arguments stand for:
+
+- **SimName** The name you wish to put to the simulation folder.
+- **Vdiv** The advantage that the 2nd population will get in division. Mathematically, it is described as the ratio between 1st population and 2nd population's times of division. Hence, its value will range between 0 and 1, with a value closer to 1 meaning a smaller advantage.
+- **Vmig** The advantage that the 2nd population will get in migration speed. Mathematically, it is described as the ratio between 1st population and 2nd population's migration coefficients. Hence, its value will range between 0 and 1, with a value closer to 1 meaning a smaller advantage.
+
+Different combinations of these parameters (**Vmig** and **Vdiv**) will provide different growth dynamics, hence influencing the resulting exponent \beta.
