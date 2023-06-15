@@ -47,8 +47,8 @@ After reading the section on model's usage in the main page of [this repository]
   
 These three arguments stand for:
 
-- **SimName** The name you wish to put to the simulation folder.
-- **Vdiv** The advantage that the 2nd population will get in division. Mathematically, it is described as the ratio between 1st population and 2nd population's times of division. Hence, its value will range between 0 and 1, with a value closer to 1 meaning a smaller advantage.
-- **Vmig** The advantage that the 2nd population will get in migration speed. Mathematically, it is described as the ratio between 1st population and 2nd population's migration coefficients. Hence, its value will range between 0 and 1, with a value closer to 1 meaning a smaller advantage.
+- **SimName**: The name you wish to put to the simulation folder.
+- **Vdiv**: The advantage that the 2nd population will get in division. Mathematically, it is described as the ratio between 1st population and 2nd population's times of division. Hence, its value will range between 0 and 1, with a value closer to 1 meaning a smaller advantage.
+- **Vmig**: The advantage that the 2nd population will get in migration speed. Mathematically, it is described as the ratio between 1st population and 2nd population's migration coefficients. Hence, its value will range between 0 and 1, with a value closer to 1 meaning a smaller advantage.
 
 Different combinations of these parameters (**Vmig** and **Vdiv**) will provide different growth dynamics, hence influencing the resulting exponent &beta;.
