@@ -43,7 +43,7 @@ You also need to download the input file **[Param_dist.txt](https://github.com/J
 
 After reading the section on model's usage in the main page of [this repository](https://github.com/JuanJS117/MesoscopicModel/tree/main) (section 3), it should be straightforward to run simulations with the mesoscopic model. However, take care, since this version requires some more arguments in the input command. While we will not cover how to run simulations in this section, we will build upon the main page's tutorial, and detail how to run a simulation of a brain metastasis using this version of the model. The general command to write in your console is:
 
-  julia main.jl SimName Vdiv Vmig
+    julia main.jl SimName Vdiv Vmig
   
 These three arguments stand for:
 
